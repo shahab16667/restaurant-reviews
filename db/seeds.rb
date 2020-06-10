@@ -2,7 +2,7 @@ puts "cleaning up database"
 Restaurant.destroy_all
 puts "database is clean now"
 
-100.times do
+200.times do
     restaurant = Restaurant.create(
         name: Faker::Restaurant.name,
         address: Faker::Address.street_address,
