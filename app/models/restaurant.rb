@@ -1,3 +1,3 @@
 class Restaurant < ApplicationRecord
-    has_many :reviews, class_name: "review", foreign_key: "reference_id", dependent: :destroy
+    has_many :reviews, dependent: :destroy
 end
