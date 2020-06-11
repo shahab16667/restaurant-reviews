@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :find_restaurant
+    before_action :find_restaurant, except: [:destroy]
     def new 
         # we need @restaurant in our `simple_form_for`
       @restaurant = Restaurant.find(params[:restaurant_id])
@@ -18,7 +18,9 @@ class ReviewsController < ApplicationController
     end
 
     def destroy 
-       @review = Review.find(params[:id]) 
+      @review = Review.find(params[:id])
+      @review.destroy
+      redirect_to restaurant_path(@review.restaurant)
     end
 
 
