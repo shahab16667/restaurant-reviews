@@ -17,6 +17,11 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy 
+       @review = Review.find(params[:id]) 
+    end
+
+
     private 
 
     def find_restaurant
